@@ -10,19 +10,39 @@ a string (of maximum length 127 characters plus 1 for null-termination),
 and a pointer to the next node in the list.  You can think of the linked
 list as containing a list of names.
 
+A definition for ``struct node`` can simply be::
+
+    struct node {
+        char name[128];
+        struct node *next;
+    };
+
 For this homework, you will write a few functions to add new 
-functionality to the linked list library.  You can use any built-in
+functionality to a linked list library.  You can use any built-in
 C functions in your work (e.g., strlen, strncasecmp, strlcpy, etc.)
 
+You should write all your functions in one ``.c`` file, and just submit
+that ``.c`` file.  To test your code, you can use the sample linked
+list code that we wrote in class (and modify it a little bit reflect the
+fact that linked lists for this homework will have a char array as
+the value, rather than an int).
 
-1.  The first function you should write is one that takes a pointer to the
-head of the list, and prints each item in the list to the console.  The 
+------
+
+
+1.  The first function you should write is one that takes a string
+and a pointer to the head of the list as parameters, and prints 
+each item in the list to the console (stdout) that matches the first
+parameter.  The match should be done in a case-insensitive way (look
+up the ``strncasecmp`` manual page for how to do this).  The 
 function should *not* modify the list (i.e., you should be able to call
-``list_print`` repeatedly, with the same results each time).
+``list_print_matches`` repeatedly, with the same results each time).  Note that
+this function is very similar to one we wrote in class, except for the
+matching element.
 
 The type signature of ``list_print`` should be::
 
-    void list_print(const struct node *head) {
+    void list_print_matches(const char *name, const struct node *head) {
     
     }
 
