@@ -23,7 +23,7 @@ C functions in your work (e.g., strlen, strncasecmp, strlcpy, etc.)
 
 You should write all your functions in one ``.c`` file, and just submit
 that ``.c`` file.  To test your code, you can use the sample linked
-list code that we wrote in class (and modify it a little bit reflect the
+list code that we wrote (or will write) in class (and modify it a little bit reflect the
 fact that linked lists for this homework will have a char array as
 the value, rather than an int).
 
