@@ -28,8 +28,7 @@ void list_print_matches(const struct node *head) {
       struct node * iterator = head;
   char * my_name = strdup(name);//remember to free my_name up
   char * iterator_name = iterator -> name;
-  if ( strcasecamp(iterator_name,my_name)==0){
-    printf("\ns\n",iterator_name);
+  
 
   }
 
@@ -43,13 +42,17 @@ void list_print_matches(const struct node *head) {
 
   }
 
-    
+  free(my_name);
 }
 
 
 void list_delete(const char *name, struct node **head) {
-    // your code here
-
+  struct node * iterator  = * head;
+  char * my_name = strdup(name);
+  
+  
+  
+  
 }
 
 void list_append(const char *name, struct node **head) {
