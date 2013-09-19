@@ -47,16 +47,35 @@ void list_print_matches(const struct node *head) {
 
 
 void list_delete(const char *name, struct node **head) {
-  struct node * iterator  = * head;
-  char * my_name = strdup(name);
+  struct node * iterator  = * head;//I have a ptr to the head of the ll
+  struct node * follower = * head;// This is also a ptr to the head of the ll(at the moment)
+  // It's function is the be able to build a new bridge. 
+  char * my_name = strdup(name);// needed since the input is a const string(need to free this
+  if (strcasecmp(( iterator -> name),my_name )==0){
+    struct node * ptr_to_head = iterator -> next ;
+    head = & ptr_to_head ;
+    
+  }
+  iterator = iterator ->next ;
   
+  while( iterator != NULL){
+  if (strcasecmp(( iterator -> name),my_name )==0){
+    follower -> next = iterator -> next ;
+    
+
+  }else { iterator = iterator -> next ;
+    follower = follower -> next ;
+
+     }
+  
+  }
   
   
   
 }
 
 void list_append(const char *name, struct node **head) {
-    // your code here
+g    // your code here
 
 }
 
